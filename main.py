@@ -1,8 +1,10 @@
 #import library
 import random
+import sys
 
 #Intiliaze a global value that will fetch the text file and store it in an array
 nickNames = list(open("nickname.txt", 'r+'))
+print(nickNames)
 
 
 #initiliaze a function that displays a random nickName
@@ -13,7 +15,7 @@ def randomName(first, second):
 
 #initliaze a function that displays all the nicknames
 def allName(first, second):
-  #loop through the whole array using 
+  #loop through the whole array using for
   for i in range(len(nickNames)):
     print(first + " the " + nickNames[i] + second)
 
@@ -24,7 +26,19 @@ def addName():
   nickNames.append(userInput)
   print("Nickname has been added")
 
-  
+
+#initialize a function that will search for a nickname and remove ot
+def removeName():
+  #initialize variables
+  loop = True 
+  userInput = input("Enter a nickname: ").lower()
+
+  #loop through the array and search for the nickname
+  for i in range(len(nickNames)):
+    if userInput == nickNames[i]:
+      print("Nickname found and removed")
+    else:
+      print("Not found")
 
 
 #intitialize a function that will display the menu
@@ -55,15 +69,14 @@ def menu(firstName, lastName):
       removeName()
     
     elif userInp == 6:
-      loop = False
-    
+      print("Program closed")
+      sys.exit()
+      
     else: 
       print("Invalid Response")
-  
-  else:
-    print("Program Closed")
 
 
+#initiliaze a function that will ask for the names
 def askName():
   firstName = input("Enter your first name: ")
   lastName = input("Enter your last name: ")
