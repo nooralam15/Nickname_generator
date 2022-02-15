@@ -2,22 +2,29 @@
 import random
 import sys
 
+
 #Intiliaze a global value that will fetch the text file and store it in an array
 nickNames = list(open("nickname.txt", 'r+'))
-print(nickNames)
+
+
+#Initialize an array that will remove the new lines in the array
+def fixArray():
+  for x,n in enumerate(nickNames):
+    nickNames[x] = n.strip()
+fixArray()
 
 
 #initiliaze a function that displays a random nickName
 def randomName(first, second):
   randInt = random.randint(0,len(nickNames))
-  print(first + " the " + nickNames[randInt] + second)
+  print(first + " the " + nickNames[randInt] + " " + second)
 
 
 #initliaze a function that displays all the nicknames
 def allName(first, second):
   #loop through the whole array using for
   for i in range(len(nickNames)):
-    print(first + " the " + nickNames[i] + second)
+    print(first + " the " + nickNames[i] + " " + second)
 
 
 #initiliaze a function that will add a nickname to the array
@@ -30,27 +37,29 @@ def addName():
 #initialize a function that will search for a nickname and remove ot
 def removeName():
   #initialize variables
-  loop = True 
   userInput = input("Enter a nickname: ").lower()
-
+  #flag = False
   #loop through the array and search for the nickname
   for i in range(len(nickNames)):
     if userInput == nickNames[i]:
       print("Nickname found and removed")
-    else:
-      print("Not found")
+      #nickNames.pop(i)
+  #for i in range(len(nickNames)):
+    #if userInput == nickNames[i]:
+      #flag = True 
+     # if flag == True:
+      #  print("Nickname found and removed")
+  print("Not found")
 
 
 #intitialize a function that will display the menu
 def menu(firstName, lastName):
-  #print the the title of the menu
-  print("Main Menu (" + firstName + " " + lastName + ")")
-
   #initialize variable
   loop = True 
-
   #create a while loop that will loop through the menu
   while loop:
+    #print the the title of the menu
+    print("Main Menu (" + firstName + " " + lastName + ")")
     userInp = int(input("Enter the number \n 1. Change Name \n 2. Display a Random Nickname \n 3. Display All Nicknames \n 4. Add a Nickname \n 5. Remove a Nickname \n 6. Exit  \n"))
 
     if userInp == 1:
@@ -81,5 +90,4 @@ def askName():
   firstName = input("Enter your first name: ")
   lastName = input("Enter your last name: ")
   menu(firstName, lastName)
-
 askName()
