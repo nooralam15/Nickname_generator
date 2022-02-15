@@ -2,6 +2,7 @@ canidae
 chameleon
 felidae
 cat
+cat
 cattle
 dog
 donkey
@@ -103,7 +104,6 @@ cephalopod
 chameleon
 cheetah
 chickadee
-chicken
 list
 chimpanzee
 chinchilla
@@ -220,7 +220,6 @@ herring
 hippopotamus
 hookworm
 hornet
-horse
 list
 hoverfly
 hummingbird
@@ -483,9 +482,7 @@ common household pests
 common names of poisonous animals
 alpaca
 bali cattle
-cat
 cattle
-chicken
 dog
 domestic bactrian camel
 domestic canary
@@ -510,7 +507,6 @@ gayal
 goldfish
 guinea pig
 guppy
-horse
 koi
 llama
 ringneck dove
