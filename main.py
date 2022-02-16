@@ -34,22 +34,20 @@ def addName():
   print("Nickname has been added")
 
 
-#initialize a function that will search for a nickname and remove ot
+#initialize a function that will search for a nickname and remove it
 def removeName():
   #initialize variables
   userInput = input("Enter a nickname: ").lower()
-  #flag = False
+  flag = False
   #loop through the array and search for the nickname
-  for i in range(len(nickNames)):
-    if userInput == nickNames[i]:
-      print("Nickname found and removed")
-      #nickNames.pop(i)
-  #for i in range(len(nickNames)):
-    #if userInput == nickNames[i]:
-      #flag = True 
-     # if flag == True:
-      #  print("Nickname found and removed")
-  print("Not found")
+  for i in nickNames[:]:
+    if userInput == i:
+      flag = True 
+      if flag == True:
+        nickNames.remove(i)
+        print("Nickname found and removed")
+  if not flag: 
+    print("Not found")
 
 
 #intitialize a function that will display the menu
