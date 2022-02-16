@@ -53,11 +53,9 @@ def menu(firstName, lastName):
     while loop:
         #print the the title of the menu
         print("Main Menu (" + firstName + " " + lastName + ")")
-        userInp = int(
-            input(
-                "Enter the number \n 1. Change Name \n 2. Display a Random Nickname \n 3. Display All Nicknames \n 4. Add a Nickname \n 5. Remove a Nickname \n 6. Exit  \n"
+        userInp = int(input("Enter the number \n 1. Change Name \n 2. Display a Random Nickname \n 3. Display All Nicknames \n 4. Add a Nickname \n 5. Remove a Nickname \n 6. Exit  \n"
             ))
-
+        
         if userInp == 1:
             askName()
 
